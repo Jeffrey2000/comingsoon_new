@@ -1,0 +1,184 @@
+* {
+    box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Bahnschrift', 'Cailbri', sans-serif;
+    overflow-x: hidden;
+  }
+  
+  #container {
+    height: 100%;
+    width: 100%;
+  }
+  
+  @mixin makeCenter(){
+    text-align: center;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+  }
+
+  
+  .landing_heading {
+    font-size: 50px;
+    font-weight: 300;
+  }
+  
+  button {
+    background-color: #ffffff;
+    border-radius: 24.5px;
+    box-shadow: -2px 2px 6px rgba(0, 0, 0, 0.16);
+    width: 196px;
+    height: 49px;
+    color: #121212;
+    font-size: 24px;
+    font-weight: 600;
+    overflow: hidden;
+    border: none;
+  }
+  
+  .main_section {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    @media screen and (max-width: 850px){
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: 1fr;
+    }
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+  
+  .video_wrapper {
+    height: 100vh;
+    position: relative;
+    text-align: center;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    background: black;
+  }
+  
+  .stay_updated_wrapper {
+    position: relative;
+    height: fit-content;
+  }
+  
+  #myVideo {
+    height: auto;
+    width: 100%;
+  }
+  
+  .landing_wrapper {
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-top: 2em;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    height: 100vh;
+    .top_section {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.3fr 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
+    .landing_message {
+        position: relative;
+        @include makeCenter();
+        width: 100%;
+        @media screen and (max-width: 850px){
+            @include makeCenter();
+        }
+
+        span {
+            font-size: 100px;
+            @media screen and (max-width: 1420px) {
+                font-size: 70px;
+            }
+            @media screen and (max-width: 1024px) {
+                font-size: 55px;
+            }
+            @media screen and (max-width: 850px){
+                font-size: 40px;
+            }
+
+
+        }
+    }
+    .div_updated_outer {
+        padding-left: 1em;
+        padding-right: 1em;
+        padding-top: 2em;
+        padding-bottom: 4em;
+        max-width: 50%;
+        @media screen and (max-width: 995px) {
+            max-width: 100%;
+        }
+        height: 100%;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, .13);
+        border-radius: 36px;
+        font-size: 30px;
+        text-align: center;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.3fr 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 1em;
+        form {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3, 1fr);
+            grid-column-gap: 0px;
+            grid-row-gap: 1em;
+            input[type="text"] , input[type="email"]{
+                border-radius: 36px;
+                border: none;
+                background-color: #eeeeee;
+                padding-left: 1em;
+                width: auto;
+            }
+            .submit_button {
+                background: none;
+                border-radius: 36px;
+                border: 1px solid black;
+                color: black;
+                font-size: 30px;
+                text-align: center;
+                font-weight: 500;
+            }
+        }
+        .first_section {
+            width: 100%;
+            span {
+                font-size: 56px;
+                padding-top: 2em;
+                font-weight: 400;
+                @media screen and (max-width: 1635px) {
+                    font-size: 40px;
+                }
+                @media screen and (max-width: 1202px) {
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+  }
